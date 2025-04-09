@@ -1,11 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Валидация карты</title>
 </head>
 <body>
-    
+  <form id="card-form">
+    <h2>Введите номер карты:</h2>
+    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" />
+    <div style="margin-top: 10px;">
+      <img id="card-icon"  alt="Card icon" />
+    </div>
+    <p id="result"></p>
+  </form>
 </body>
 </html>

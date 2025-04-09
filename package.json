@@ -3,9 +3,9 @@
     "start": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "lint": "eslint . --fix",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "test:e2e": "jest tests/e2e"
   },
-
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
@@ -28,5 +28,8 @@
     "webpack": "^5.97.1",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.0"
+  },
+  "dependencies": {
+    "puppeteer": "^24.6.1"
   }
 }

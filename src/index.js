@@ -1,21 +1,28 @@
-import { validateCardNumber } from './app/validateCardNumber';
-import { getCardType } from './app/getCardType';
+import { validateCardNumber } from "./app/validateCardNumber";
+import { getCardType } from "./app/getCardType";
 
-const form = document.getElementById('card-form');
-const input = document.getElementById('card-number');
-const result = document.getElementById('result');
-const icon = document.getElementById('card-icon');
+const form = document.getElementById("card-form");
+const input = document.getElementById("card-number");
+const result = document.getElementById("result");
+const icon = document.getElementById("card-icon");
 
-input.addEventListener('input', () => {
-  const cardNumber = input.value.replace(/\s+/g, '');
+input.addEventListener("input", () => {
+  const cardNumber = input.value.replace(/\s+/g, "");
   const cardType = getCardType(cardNumber);
-  icon.src = cardType !== 'unknown' ? `./assets/${cardType}.png` : '';
 
-  if (validateCardNumber(cardNumber)) {
-    result.textContent = '✅ Валидная карта';
-    result.style.color = 'green';
+  // Использование Webpack для загрузки изображения
+  if (cardType !== "unknown") {
+    icon.src = require(`./img/${cardType}.png`);
   } else {
-    result.textContent = '❌ Невалидная карта';
-    result.style.color = 'red';
+    icon.src = "";
+  }
+
+  // Валидация номера карты
+  if (validateCardNumber(cardNumber)) {
+    result.textContent = "✅ Валидная карта";
+    result.style.color = "green";
+  } else {
+    result.textContent = "❌ Невалидная карта";
+    result.style.color = "red";
   }
 });
