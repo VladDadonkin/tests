@@ -1,0 +1,20 @@
+#card-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  #card-number {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  #result {
+    font-size: 18px;
+  }
+  
+  #card-icon {
+    width: 40px;
+    height: 24px;
+  }
+  
